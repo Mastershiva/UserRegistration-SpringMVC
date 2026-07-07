@@ -1,23 +1,39 @@
 # User Registration System - Spring MVC
 
-## 📌 Overview
-
-A responsive User Registration web application developed using **Spring MVC** following the MVC architecture. The application allows users to register, validates duplicate usernames with **live AJAX validation**, and stores user details in a **MySQL** database using **JDBC**.
+A responsive **User Registration and Authentication** web application built using **Spring MVC** following the MVC architecture. The application provides user registration, login, authentication, password management, session handling, and live username availability validation using AJAX. User information is stored securely in a **MySQL** database using **JDBC**.
 
 ---
 
 ## 🚀 Features
 
+### 👤 User Registration
 - ✅ User Registration Form
 - ✅ Responsive User Interface
-- ✅ Spring MVC Architecture
-- ✅ MySQL Database Integration
-- ✅ JDBC Connectivity
 - ✅ Form Validation
 - ✅ Duplicate Username Validation
 - ✅ Live Username Availability Check (AJAX)
 - ✅ Case-Insensitive Username Validation
-- ✅ Success Confirmation Page
+- ✅ Registration Success Page
+
+### 🔐 Authentication
+- ✅ User Login
+- ✅ User Logout
+- ✅ Session Management
+- ✅ Protected Dashboard
+- ✅ Prevent Unauthorized Dashboard Access
+
+### 🔑 Password Management
+- ✅ Forgot Password
+- ✅ Change Password
+- ✅ Old Password Verification
+- ✅ Password Reset
+- ✅ Success & Error Messages
+
+### 🎨 User Experience
+- ✅ Responsive Design
+- ✅ Professional UI
+- ✅ Clean Navigation
+- ✅ Reusable CSS Styling
 
 ---
 
@@ -32,9 +48,11 @@ A responsive User Registration web application developed using **Spring MVC** fo
 - Apache Tomcat 9
 - HTML5
 - CSS3
-- JavaScript (AJAX)
+- JavaScript
+- AJAX
 - Eclipse IDE
-- Git & GitHub
+- Git
+- GitHub
 
 ---
 
@@ -56,6 +74,12 @@ src/
 │       ├── js/
 │       ├── WEB-INF/
 │       │   └── views/
+│       │       ├── index.jsp
+│       │       ├── login.jsp
+│       │       ├── dashboard.jsp
+│       │       ├── forgot-password.jsp
+│       │       ├── change-password.jsp
+│       │       └── success.jsp
 │       └── web.xml
 ```
 
@@ -67,11 +91,12 @@ src/
 
 **Table:** `users`
 
-Sample Fields:
+### Columns
 
 - id
 - name
 - username
+- password
 - email
 - phone
 - city
@@ -83,46 +108,76 @@ Sample Fields:
 
 ## ▶️ How to Run
 
-1. Clone the repository.
+### 1. Clone the repository
 
 ```bash
 git clone https://github.com/Mastershiva/UserRegistration-SpringMVC.git
 ```
 
-2. Import the project as a **Maven Project** in Eclipse.
+### 2. Import into Eclipse
 
-3. Create a MySQL database.
+Import the project as an **Existing Maven Project**.
 
-4. Update the database credentials in:
+### 3. Create the Database
+
+Create a MySQL database and the required `users` table.
+
+### 4. Configure Database Connection
+
+Update your database credentials in:
 
 ```text
-DBConnection.java
+src/main/java/com/shiva/util/DBConnection.java
 ```
 
-5. Configure **Apache Tomcat 9**.
+### 5. Configure Apache Tomcat
 
-6. Run the project.
+Deploy the project on **Apache Tomcat 9**.
 
-7. Open your browser and navigate to:
+### 6. Run the Application
+
+Open your browser and visit:
 
 ```text
 http://localhost:8080/UserRegistration/
+```
+---
+
+## 🔒 Authentication Flow
+
+```text
+User Registration
+        │
+        ▼
+User Login
+        │
+        ▼
+Dashboard
+   ├──────── Change Password
+   ├──────── Logout
+   └──────── Session Management
+        │
+        ▼
+Forgot Password (if required)
 ```
 
 ---
 
 ## 🔮 Future Enhancements
 
-- User Login
-- View Registered Users
-- Edit User Details
-- Delete User
-- Search Users
-- Pagination
-- Password Encryption
-- Email Verification
-- Bootstrap UI
-- Spring Security Integration
+- 🔐 Password Encryption (BCrypt)
+- 📧 Email Verification
+- 📧 OTP-Based Password Reset
+- 👤 User Profile Management
+- ✏️ Edit Profile
+- 🗑️ Delete Account
+- 📷 Profile Picture Upload
+- 👨‍💼 Admin Panel
+- 📄 Pagination
+- 🔍 Search & Filter
+- 📊 Dashboard Analytics
+- 🛡️ Spring Security Integration
+- 📝 Audit Logging
 
 ---
 
@@ -134,4 +189,6 @@ GitHub: https://github.com/Mastershiva
 
 ---
 
-## ⭐ If you found this project useful, consider giving it a Star!
+## ⭐ Support
+
+If you found this project helpful, consider giving it a **⭐ Star** on GitHub. It helps others discover the project and motivates future improvements.
