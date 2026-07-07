@@ -36,6 +36,15 @@ Welcome! Please fill your details.
 name="name"
 required>
 
+<label>Username</label>
+
+<input type="text"
+id="username"
+name="username"
+required>
+
+<div id="usernameCard" class="username-card"></div>
+
 <label>Email</label>
 
 <input type="email"
@@ -66,7 +75,8 @@ required>
 
 <input type="radio"
 name="gender"
-value="Male">
+value="Male"
+required>
 
 Male
 
@@ -84,7 +94,7 @@ Female
 name="address"
 rows="4"></textarea>
 
-<button type="submit">
+<button type="submit" id="registerBtn">
 
 Register
 

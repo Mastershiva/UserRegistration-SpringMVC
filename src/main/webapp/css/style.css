@@ -106,7 +106,60 @@ margin-top:10px;
 margin-bottom:10px;
 
 }
+.error{
+    background:#ffe6e6;
+    color:#d60000;
+    border:1px solid #ff8080;
+    padding:12px;
+    margin-bottom:15px;
+    border-radius:6px;
+    text-align:center;
+    font-weight:bold;
+}
+.error-message{
+    width:100%;
+    padding:12px;
+    margin:15px 0;
+    background:#ffe6e6;
+    color:#c62828;
+    border:1px solid #ef9a9a;
+    border-radius:6px;
+    font-weight:bold;
+    text-align:center;
+}
+.username-card{
 
+    display:none;
+
+    margin-top:10px;
+
+    margin-bottom:15px;
+
+    padding:12px;
+
+    border-radius:8px;
+
+    background:#fdeaea;
+
+    border:1px solid #dc3545;
+
+    color:#dc3545;
+
+    font-weight:bold;
+
+    text-align:center;
+
+}
+
+button:disabled{
+
+    background:#9e9e9e;
+
+    cursor:not-allowed;
+
+    opacity:0.7;
+
+}
 button{
 
 width:100%;
