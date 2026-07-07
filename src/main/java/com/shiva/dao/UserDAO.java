@@ -16,18 +16,27 @@ public class UserDAO {
 
             Connection con = DBConnection.getConnection();
 
-            String sql = "INSERT INTO users(name, username, email, phone, city, age, gender, address) VALUES(?,?,?,?,?,?,?,?)";
+            String sql = "INSERT INTO users(name, username, password, email, phone, city, age, gender, address) VALUES(?,?,?,?,?,?,?,?,?)";
 
             PreparedStatement ps = con.prepareStatement(sql);
 
-            ps.setString(1, user.getName());
-            ps.setString(2, user.getUsername());
-            ps.setString(3, user.getEmail());
-            ps.setString(4, user.getPhone());
-            ps.setString(5, user.getCity());
-            ps.setInt(6, user.getAge());
-            ps.setString(7, user.getGender());
-            ps.setString(8, user.getAddress());
+            ps.setString(1,user.getName());
+
+            ps.setString(2,user.getUsername());
+
+            ps.setString(3,user.getPassword());
+
+            ps.setString(4,user.getEmail());
+
+            ps.setString(5,user.getPhone());
+
+            ps.setString(6,user.getCity());
+
+            ps.setInt(7,user.getAge());
+
+            ps.setString(8,user.getGender());
+
+            ps.setString(9,user.getAddress());
 
             int rows = ps.executeUpdate();
 

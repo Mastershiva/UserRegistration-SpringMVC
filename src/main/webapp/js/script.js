@@ -46,3 +46,31 @@ username.addEventListener("input", function () {
         });
 
 });
+const password=document.getElementById("password");
+const confirmPassword=document.getElementById("confirmPassword");
+const passwordMessage=document.getElementById("passwordMessage");
+
+confirmPassword.addEventListener("input",function(){
+
+    if(confirmPassword.value===""){
+        passwordMessage.style.display="none";
+        registerBtn.disabled=false;
+        return;
+    }
+
+    if(password.value!==confirmPassword.value){
+
+        passwordMessage.style.display="block";
+        passwordMessage.innerHTML="❌ Passwords do not match.";
+
+        registerBtn.disabled=true;
+
+    }else{
+
+        passwordMessage.style.display="none";
+
+        registerBtn.disabled=false;
+
+    }
+
+});

@@ -45,6 +45,23 @@ required>
 
 <div id="usernameCard" class="username-card"></div>
 
+<label>Password</label>
+
+<input type="password"
+       id="password"
+       name="password"
+       required>
+
+<label>Confirm Password</label>
+
+<input type="password"
+       id="confirmPassword"
+       required>
+
+<div id="passwordMessage"
+     class="username-card"
+     style="display:none;"></div>
+
 <label>Email</label>
 
 <input type="email"
