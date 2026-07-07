@@ -89,5 +89,118 @@ public class UserDAO {
 
         return exists;
     }
+    
+    
+    public boolean login(String username,String password){
+
+        try{
+
+            Connection con=DBConnection.getConnection();
+
+            String sql="SELECT * FROM users WHERE LOWER(username)=LOWER(?) AND password=?";
+
+            PreparedStatement ps=con.prepareStatement(sql);
+
+            ps.setString(1,username);
+
+            ps.setString(2,password);
+
+            ResultSet rs=ps.executeQuery();
+
+            boolean status=rs.next();
+
+            con.close();
+
+            return status;
+
+        }
+
+        catch(Exception e){
+
+            e.printStackTrace();
+
+        }
+
+        return false;
+
+    }
+    
+    public boolean updatePassword(String username,String password){
+
+        boolean status=false;
+
+        try {
+
+            Connection con = DBConnection.getConnection();
+
+            String sql =
+            "update users set password=? where username=?";
+
+
+            PreparedStatement ps =
+            con.prepareStatement(sql);
+
+
+            ps.setString(1,password);
+            ps.setString(2,username);
+
+
+            int rows = ps.executeUpdate();
+
+
+            if(rows>0){
+                status=true;
+            }
+
+
+        } catch(Exception e){
+
+            e.printStackTrace();
+
+        }
+
+
+        return status;
+
+    }
+    
+    public boolean changePassword(String username,
+            String oldPassword,
+            String newPassword){
+
+boolean status = false;
+
+try{
+
+Connection con = DBConnection.getConnection();
+
+String sql =
+"UPDATE users SET password=? WHERE username=? AND password=?";
+
+PreparedStatement ps =
+con.prepareStatement(sql);
+
+ps.setString(1,newPassword);
+ps.setString(2,username);
+ps.setString(3,oldPassword);
+
+int rows = ps.executeUpdate();
+
+if(rows > 0){
+
+status = true;
+
+}
+
+}
+catch(Exception e){
+
+e.printStackTrace();
+
+}
+
+return status;
+
+}
 
 }

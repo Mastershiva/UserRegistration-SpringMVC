@@ -28,17 +28,33 @@ href="${pageContext.request.contextPath}/css/style.css">
 Welcome! Please fill your details.
 </p>
 
-<form action="register" method="post">
+<%
+String error = (String)request.getAttribute("error");
+
+if(error != null){
+%>
+
+<div class="error-message">
+    <%=error%>
+</div>
+
+<%
+}
+%>
+
+<form action="${pageContext.request.contextPath}/register" method="post">
 
 <label>Full Name</label>
 
-<input type="text"
+<input
+type="text"
 name="name"
 required>
 
 <label>Username</label>
 
-<input type="text"
+<input
+type="text"
 id="username"
 name="username"
 required>
@@ -47,42 +63,49 @@ required>
 
 <label>Password</label>
 
-<input type="password"
-       id="password"
-       name="password"
-       required>
+<input
+type="password"
+id="password"
+name="password"
+required>
 
 <label>Confirm Password</label>
 
-<input type="password"
-       id="confirmPassword"
-       required>
+<input
+type="password"
+id="confirmPassword"
+required>
 
 <div id="passwordMessage"
-     class="username-card"
-     style="display:none;"></div>
+class="username-card"
+style="display:none;">
+</div>
 
 <label>Email</label>
 
-<input type="email"
+<input
+type="email"
 name="email"
 required>
 
 <label>Phone Number</label>
 
-<input type="text"
+<input
+type="text"
 name="phone"
 required>
 
 <label>City</label>
 
-<input type="text"
+<input
+type="text"
 name="city"
 required>
 
 <label>Age</label>
 
-<input type="number"
+<input
+type="number"
 name="age"
 required>
 
@@ -90,14 +113,18 @@ required>
 
 <div class="radio">
 
-<input type="radio"
+<input
+type="radio"
 name="gender"
 value="Male"
 required>
 
 Male
 
-<input type="radio"
+&nbsp;&nbsp;
+
+<input
+type="radio"
 name="gender"
 value="Female">
 
@@ -109,15 +136,32 @@ Female
 
 <textarea
 name="address"
-rows="4"></textarea>
+rows="4">
+</textarea>
 
-<button type="submit" id="registerBtn">
+<button
+type="submit"
+id="registerBtn">
 
 Register
 
 </button>
 
 </form>
+
+<div class="link-group">
+
+<p>
+Already have an account?
+</p>
+
+<a href="${pageContext.request.contextPath}/login">
+
+Login
+
+</a>
+
+</div>
 
 </div>
 
